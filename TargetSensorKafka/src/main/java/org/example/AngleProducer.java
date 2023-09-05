@@ -22,7 +22,7 @@ public class AngleProducer {
        Producer<String, String> producer = new KafkaProducer<>(properties);
 
        String angleDegrees = calculateAngle();
-       String message = "İki nokta arasındaki açı (derece): " + angleDegrees;
+       String message = angleDegrees;
        ProducerRecord<String, String> record = new ProducerRecord<>(topic, null, message);
 
        producer.send(record);
